@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Scanner Results Viewer | Created by Antech-greyhat.github.io</title>
+    <link rel="stylesheet" href="ip.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <h1><span class="logo">IP Scanner Results Viewer</span></h1>
+            <div>Created by <a href="https://Antech-greyhat.github.io" target="_blank">Antech-greyhat.github.io</a></div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="controls">
+            <button id="loadFileBtn" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                Load scan.txt
+            </button>
+            <input type="file" id="fileInput" class="file-input" accept=".txt">
+            <button id="reloadBtn" class="btn btn-secondary" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.5 2v6h-6M2.5 22v-6h6M22 11.5a10 10 0 0 1-10 10 10 10 0 0 1-10-10 10 10 0 0 1 10-10 10 10 0 0 1 10 10z"></path>
+                </svg>
+                Reload Data
+            </button>
+        </div>
+        
+        <div id="status" class="status"></div>
+        
+        <div class="filter-controls">
+            <input type="text" id="ipFilter" class="filter-input" placeholder="Filter by IP...">
+            <input type="text" id="portFilter" class="filter-input" placeholder="Filter by port...">
+            <select id="httpFilter" class="filter-input">
+                <option value="all">All protocols</option>
+                <option value="http">HTTP only</option>
+                <option value="https">HTTPS only</option>
+            </select>
+        </div>
+        
+        <div id="grid" class="grid"></div>
+        
+        <div class="pagination" id="pagination">
+            <!-- Pagination buttons will be added here -->
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>IP Scanner Results Viewer - Professional tool for viewing Angry IP Scanner results</p>
+            <p>Data is processed locally in your browser - no server interaction required</p>
+        </div>
+    </footer>
+    <script src="ip.js"></script>
+</body>
+</html>
